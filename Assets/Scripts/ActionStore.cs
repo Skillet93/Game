@@ -4,7 +4,7 @@ namespace DefaultNamespace
 {
     public static class ActionStore
     {
-        public static float RedFactor = 0;
+        public static float RedFactor = 0.25f;
         public static float GreenFactor = 0;
         private static ColorDirection _colorDirection = ColorDirection.BlueToGreen;
 
@@ -32,7 +32,7 @@ namespace DefaultNamespace
         private static void FromPurpleToBlue(float factor)
         {
             RedFactor -= factor;
-            SwitchIfReachLimit(RedFactor <= 0, ColorDirection.BlueToGreen);
+            SwitchIfReachLimit(RedFactor <= 0.25f, ColorDirection.BlueToGreen);
         }
 
         private static void FromGreenToBlue(float factor)
