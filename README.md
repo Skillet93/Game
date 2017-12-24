@@ -22,4 +22,5 @@
 ## Napotkane problemy
 * Opóźnienia animacji run, idle **Status**:  :white_check_mark:
 * Migające linie na złączeniach Sprit'ów **Status**:  :white_check_mark:
-* Czasowe zawieszanie się postaci w animacji biegu **Status**:  :heavy_exclamation_mark:
+* Czasowe zawieszanie się postaci w animacji biegu **Status**:  :white_check_mark:
+* Możliwość przerwania animacji dead klawiszem skoku **Status**: :heavy_exclamation_mark:
