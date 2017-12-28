@@ -19,6 +19,7 @@ public class HeroController : MonoBehaviour
     private float radius = 0.1f;
 
     private int count = 0;
+    private bool heroDead;
 
     void Start()
     {
@@ -30,6 +31,10 @@ public class HeroController : MonoBehaviour
     {
         //Debug.Log("Update: " + System.DateTime.Now.Millisecond);
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("CristalContact"))
+        {
+            heroDead = true;
+        }
+        if (heroDead)
         {
             rgdBody.velocity = Vector2.zero;
             return;
@@ -72,6 +77,7 @@ public class HeroController : MonoBehaviour
 
     public void RestartHero()
     {
+        heroDead = false;
         gameObject.transform.position = startPoint.position;
     }
 }

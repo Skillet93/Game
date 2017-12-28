@@ -16,10 +16,15 @@
         <e p="Scripts" t="Include">
           <e p="ActionStore.cs" t="Include" />
           <e p="BackGroundController.cs" t="Include" />
+          <e p="CounterController.cs" t="Include" />
           <e p="FailCristalController.cs" t="Include" />
           <e p="FollowHero.cs" t="Include" />
           <e p="HeroController.cs" t="Include" />
+          <e p="MovingPlatform.cs" t="Include" />
           <e p="ParallaxScrolling.cs" t="Include" />
+          <e p="PickUpCristal.cs" t="Include" />
+          <e p="RestartPoint.cs" t="Include" />
+          <e p="RestartPointsManager.cs" t="Include" />
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />
