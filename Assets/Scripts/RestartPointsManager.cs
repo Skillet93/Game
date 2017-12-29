@@ -15,6 +15,6 @@ public class RestartPointsManager : MonoBehaviour
 	// Update is called once per frame
 	public void UpdateStartPoint (Transform transform)
 	{
-		HeroController.startPoint = transform;
+		HeroController.StartPoint = transform;
 	}
 }

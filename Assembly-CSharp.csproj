@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ActionStore.cs" />
     <Compile Include="Assets\Scripts\BackGroundController.cs" />
+    <Compile Include="Assets\Scripts\BackgroundMusicController.cs" />
     <Compile Include="Assets\Scripts\CounterController.cs" />
     <Compile Include="Assets\Scripts\FailCristalController.cs" />
     <Compile Include="Assets\Scripts\FollowHero.cs" />

@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ffb77dffc3a9f41aa1b3cbd68985d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioClip: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
   cristalLight: {fileID: 108537977605638428}
 --- !u!212 &212624762637446778
 SpriteRenderer:

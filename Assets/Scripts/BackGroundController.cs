@@ -17,8 +17,8 @@ public class BackGroundController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		Debug.Log("R: "+ _spriteRenderer.color.r);
-		Debug.Log("G: "+ _spriteRenderer.color.g);
+		//Debug.Log("R: "+ _spriteRenderer.color.r);
+		//Debug.Log("G: "+ _spriteRenderer.color.g);
 		_spriteRenderer.color = new Color(ActionStore.RedFactor, ActionStore.GreenFactor,
 				_spriteRenderer.color.b, _spriteRenderer.color.a);
 

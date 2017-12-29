@@ -5,63 +5,65 @@ using UnityEngine;
 
 public class HeroController : MonoBehaviour
 {
-    public float heroSpeed;
-    public float jumpForce;
-    public Transform groundpoint;
-    public LayerMask layerToTest;
-    public Transform startPoint;
+    public float HeroSpeed;
+    public float JumpForce;
+    public Transform Groundpoint;
+    public LayerMask LayerToTest;
+    public Transform StartPoint;
+    public AudioClip JumpSound;
 
 
-    private Animator anim;
-    private Rigidbody2D rgdBody;
-    private bool directionToRight = true;
-    private bool onTheGround = true;
-    private float radius = 0.1f;
-
-    private int count = 0;
-    private bool heroDead;
+    private Animator _anim;
+    private Rigidbody2D _rgdBody;
+    private bool _directionToRight = true;
+    private bool _onTheGround = true;
+    private float _radius = 0.1f;
+    private int _count = 0;
+    private bool _heroDead;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
-        rgdBody = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
+        _rgdBody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         //Debug.Log("Update: " + System.DateTime.Now.Millisecond);
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("CristalContact"))
+        if (_anim.GetCurrentAnimatorStateInfo(0).IsName("CristalContact"))
         {
-            heroDead = true;
+            _heroDead = true;
         }
-        if (heroDead)
+        if (_heroDead)
         {
-            rgdBody.velocity = Vector2.zero;
+            _rgdBody.velocity = Vector2.zero;
             return;
         }
         ActionStore.ModifyColorFactor(0.0015f);
-        onTheGround = Physics2D.OverlapCircle(groundpoint.position, radius, layerToTest);
+        _onTheGround = Physics2D.OverlapCircle(Groundpoint.position, _radius, LayerToTest);
+        _anim.SetBool("onGround", _onTheGround);
         var horizontalMove = Input.GetAxis("Horizontal");
         //Debug.Log("Move: " + horizontalMove);
-        rgdBody.velocity = new Vector2(horizontalMove * heroSpeed, rgdBody.velocity.y);
-        if (Input.GetKeyDown(KeyCode.Space) && onTheGround)
+        _rgdBody.velocity = new Vector2(horizontalMove * HeroSpeed, _rgdBody.velocity.y);
+        if (Input.GetKeyDown(KeyCode.Space) && _onTheGround)
         {
-            rgdBody.AddForce(new Vector2(0f, jumpForce));
-            anim.SetTrigger("jump");
+            _rgdBody.AddForce(new Vector2(0f, JumpForce));
+            _anim.SetTrigger("jump");
+            AudioSource.PlayClipAtPoint(JumpSound, transform.position);
         }
-        anim.SetFloat("speed", Mathf.Abs(horizontalMove));
+        _anim.SetFloat("speed", Mathf.Abs(horizontalMove));
 
         SetHeroDirection(horizontalMove);
     }
 
     private void SetHeroDirection(float horizontalMove)
     {
-        if (horizontalMove < 0 && directionToRight)
+        if (horizontalMove < 0 && _directionToRight)
         {
             FlipHero();
         }
 
-        if (horizontalMove > 0 && !directionToRight)
+        if (horizontalMove > 0 && !_directionToRight)
         {
             FlipHero();
         }
@@ -69,7 +71,7 @@ public class HeroController : MonoBehaviour
 
     private void FlipHero()
     {
-        directionToRight = !directionToRight;
+        _directionToRight = !_directionToRight;
         var heroScale = gameObject.transform.localScale;
         heroScale.x *= -1;
         gameObject.transform.localScale = heroScale;
@@ -77,7 +79,7 @@ public class HeroController : MonoBehaviour
 
     public void RestartHero()
     {
-        heroDead = false;
-        gameObject.transform.position = startPoint.position;
+        _heroDead = false;
+        gameObject.transform.position = StartPoint.position;
     }
 }
