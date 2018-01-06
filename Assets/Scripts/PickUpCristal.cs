@@ -8,6 +8,7 @@ public class PickUpCristal : MonoBehaviour
 	public AudioClip AudioClip;
 	private CounterController _counterController;
 	public Light cristalLight;
+	public GameObject particlesPrefab;
 	// Use this for initialization
 	void Start ()
 	{
@@ -26,6 +27,7 @@ public class PickUpCristal : MonoBehaviour
 			AudioSource.PlayClipAtPoint(AudioClip, transform.position);
 			Destroy(cristalLight);
 			_counterController.IncrementCounter();
+			Instantiate(particlesPrefab, transform.position, transform.rotation);
 		}
 	}
 }

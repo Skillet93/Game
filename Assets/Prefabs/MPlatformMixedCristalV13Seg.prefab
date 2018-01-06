@@ -720,6 +720,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioClip: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
   cristalLight: {fileID: 108619779822151990}
+  particlesPrefab: {fileID: 1998590472220560, guid: 6f36f507a0f233342b15100726b86d2c,
+    type: 2}
 --- !u!114 &114604369312688740
 MonoBehaviour:
   m_ObjectHideFlags: 1

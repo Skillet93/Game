@@ -58,9 +58,12 @@
     <Compile Include="Assets\Scripts\CounterController.cs" />
     <Compile Include="Assets\Scripts\FailCristalController.cs" />
     <Compile Include="Assets\Scripts\FollowHero.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\HeroController.cs" />
+    <Compile Include="Assets\Scripts\MenuController.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
     <Compile Include="Assets\Scripts\ParallaxScrolling.cs" />
+    <Compile Include="Assets\Scripts\ParticlesAutodestructor.cs" />
     <Compile Include="Assets\Scripts\PickUpCristal.cs" />
     <Compile Include="Assets\Scripts\RestartPoint.cs" />
     <Compile Include="Assets\Scripts\RestartPointsManager.cs" />

@@ -163,7 +163,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1224886940879300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.76, y: 0.04, z: 0}
+  m_LocalPosition: {x: -4.48, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4947223439908586}
@@ -269,7 +269,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120873829375620}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.7, y: 1.32, z: 0.00077142566}
+  m_LocalPosition: {x: 37.990997, y: 4.10583, z: 0.068925664}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4235739397455936}
@@ -417,7 +417,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ffb77dffc3a9f41aa1b3cbd68985d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioClip: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
   cristalLight: {fileID: 108340832717028420}
+  particlesPrefab: {fileID: 1998590472220560, guid: 6f36f507a0f233342b15100726b86d2c,
+    type: 2}
 --- !u!212 &212477191973172788
 SpriteRenderer:
   m_ObjectHideFlags: 1
