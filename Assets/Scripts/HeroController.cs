@@ -57,6 +57,7 @@ public class HeroController : MonoBehaviour
         _onTheGround = Physics2D.OverlapCircle(Groundpoint.position, _radius, LayerToTest);
         _anim.SetBool("onGround", _onTheGround);
         var horizontalMove = Input.GetAxis("Horizontal");
+        Debug.Log("Horizontal: "+horizontalMove);
         _rgdBody.velocity = new Vector2(horizontalMove * HeroSpeed, _rgdBody.velocity.y);
         
         ManageToJump();

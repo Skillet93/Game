@@ -18,6 +18,7 @@
           <e p="BackGroundController.cs" t="Include" />
           <e p="BackgroundMusicController.cs" t="Include" />
           <e p="CounterController.cs" t="Include" />
+          <e p="DogController.cs" t="Include" />
           <e p="FailCristalController.cs" t="Include" />
           <e p="FollowHero.cs" t="Include" />
           <e p="GameController.cs" t="Include" />
