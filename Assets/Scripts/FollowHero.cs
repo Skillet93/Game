@@ -15,7 +15,7 @@ public class FollowHero : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		var newCameraPosition = new Vector3(Hero.transform.position.x, transform.position.y, transform.position.z);
 		transform.position = Vector3.SmoothDamp(transform.position, newCameraPosition, ref currentVelocity, Smooth);
 	}

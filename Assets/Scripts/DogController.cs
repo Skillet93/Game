@@ -7,11 +7,12 @@ public class DogController : MonoBehaviour {
 	public Transform NavigationStartPoint;
 	public Transform NavigationEndPoint;
 	public float HeroSpeed;
-	
+
+	private Animator _anim;
 	private Vector2 _startPoint;
 	private Vector2 _endPoint;
 	private bool _directionToRight = true;
-	private bool _changeDirection = false;
+	private bool _changeDirection;
 	private Rigidbody2D _rgdBody;
 	private float horizontalMove;
 	private Vector2 _currentPlatformPosition;
@@ -23,21 +24,22 @@ public class DogController : MonoBehaviour {
 		Destroy(NavigationStartPoint.gameObject);
 		Destroy(NavigationEndPoint.gameObject);
 		_rgdBody = GetComponent<Rigidbody2D>();
+		_anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (transform.position.x > _endPoint.x)
 		{
-			horizontalMove = horizontalMove*(-1) - 0.3f;
+			horizontalMove = horizontalMove*(-1) - 1.1f;
 			_changeDirection = true;
 			_directionToRight = !_directionToRight;
-			Debug.Log("Dog position"+transform.position.x+" EndPointPosition: "+_endPoint.x);
+			Debug.Log("Dog position"+transform.position.x+" EdPointPosition: "+_endPoint.x);
 			Debug.Log("Change direction: to left: "+_directionToRight+" HorizontalMove: "+horizontalMove);
 		} else if(transform.position.x < _startPoint.x)
 		{
 			_changeDirection = true;
-			horizontalMove = horizontalMove*(-1) + 0.3f;
+			horizontalMove = horizontalMove*(-1) + 1.1f;
 			_directionToRight = !_directionToRight;
 			Debug.Log("Dog position"+transform.position.x+" StartPointPosition: "+_startPoint.x);
 			Debug.Log("Change direction: to right: "+_directionToRight+" HorizontalMove: "+horizontalMove);
@@ -55,6 +57,7 @@ public class DogController : MonoBehaviour {
 		}
 
 		_rgdBody.velocity = new Vector2(horizontalMove * HeroSpeed, _rgdBody.velocity.y);
+		_anim.SetFloat("speed", Mathf.Abs(horizontalMove));
 		SetHeroDirection(horizontalMove);
 		_changeDirection = false;
 	}
